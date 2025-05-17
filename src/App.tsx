@@ -98,7 +98,7 @@ function App() {
                 if (e.key === "Enter") {
                   name ? gitFetch(name) : gitFetch("octocat");
                 }
-              }} onChange={(e) => setName(e.target.value)} placeholder={isMobile ? "Search" : "Search GitHub username…"} id='searchInput' name='searchInput' className={`caret-[#0079FF] placeholder:font-[400] placeholder:text-[1.8rem] placeholder:leading-[25px] placeholder:text-[#ffffff] outline-none font-[400] max-sm:w-[50%]! leading-[25px] text-[1.8rem] text-[#ffffff] w-[300px] ${!theme ? "placeholder:text-[#4B6A9B]!" : ""}`} type="text" />
+              }} onChange={(e) => setName(e.target.value)} placeholder={isMobile ? "Search" : "Search GitHub username…"} id='searchInput' name='searchInput' className={`caret-[#0079FF] placeholder:font-[400] placeholder:text-[1.8rem] placeholder:leading-[25px] placeholder:text-[#ffffff] outline-none font-[400] max-sm:w-[50%]! leading-[25px] text-[1.8rem] text-[#ffffff] w-[300px] ${!theme ? "placeholder:text-[#4B6A9B]! text-[#222731]!" : ""}`} type="text" />
             </div>
             <div className='flex items-center gap-[25px]'>
               <p className={`${textPreset1} text-[#F74646]! text-[1.5rem]!  ${notFound ? "flex!" : "hidden"}`}>No results</p>
