@@ -8,11 +8,7 @@ function App() {
 
   async function githubFetch(name: string = "octocat") {
     try {
-      let response = await fetch(`https://api.github.com/users/${name}`, {
-        headers: {
-          Authorization: `token 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`
-        }
-      })
+      let response = await fetch(`https://api.github.com/users/${name}`)
 
       if (!response.ok) {
         throw new Error("Response Error!")
