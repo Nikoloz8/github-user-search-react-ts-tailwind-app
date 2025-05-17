@@ -76,7 +76,7 @@ function App() {
 
   const [name, setName] = useState("octocat")
 
-  const [theme, setTheme] = useState(false)
+  const [theme, setTheme] = useState(true)
 
   const { sunSVG, companySVG, locationSVG, twitterSVG, websiteSVG, moonSVG } = AppSVGS(theme)
 
