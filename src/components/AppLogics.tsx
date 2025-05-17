@@ -2,9 +2,11 @@ import { useEffect, useState } from "react"
 
 export default function AppLogics() {
 
+    const [loading, setLoading] = useState(false)
 
     async function githubFetch(name: string = "octocat") {
         try {
+            setLoading(true)
             let response = await fetch(`https://api.github.com/users/${name}`)
 
             if (!response.ok) {
@@ -17,6 +19,9 @@ export default function AppLogics() {
         } catch (e) {
             console.log(e)
             return null
+        }finally{
+            setLoading(false)
+
         }
     }
 
@@ -49,12 +54,11 @@ export default function AppLogics() {
     const [notFound, setNotFound] = useState(false)
 
     async function gitFetch(name: string = "octocat") {
-        const user = await githubFetch(name.trim())
+        const user = await githubFetch(name)
         if (!user.name) {
             setNotFound(true)
             return
         }
-
         setNotFound(false)
 
         let date = user.created_at.split("-")
@@ -86,5 +90,6 @@ export default function AppLogics() {
         info,
         notFound,
         gitFetch,
+        loading
     }
 }
