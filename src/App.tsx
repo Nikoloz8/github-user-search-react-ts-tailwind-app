@@ -8,11 +8,9 @@ function App() {
 
   async function githubFetch(name: string = "octocat") {
     try {
-      const token = process.env.GITHUB_TOKEN || "fake_token";
-
       let response = await fetch(`https://api.github.com/users/${name}`, {
         headers: {
-          Authorization: `token ${token}`
+          Authorization: `token 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`
         }
       })
 
