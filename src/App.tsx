@@ -8,11 +8,7 @@ function App() {
 
   async function githubFetch(name: string = "octocat") {
     try {
-      let response = await fetch(`https://api.github.com/users/${name}`, {
-        headers: {
-          Authorization: `token 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`
-        }
-      })
+      let response = await fetch(`https://api.github.com/users/${name}`)
 
       if (!response.ok) {
         throw new Error("Response Error!")
@@ -103,7 +99,7 @@ function App() {
             </div>
           </label>
           <div className='p-[50px]! w-[100%] bg-[#1E2A47] flex rounded-[15px]'>
-            <img className='w-[120px] h-[120px] mr-[50px] rounded-[100%]' src={info.imageUrl ? info.imageUrl : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGrKfppDuTzpqelOMqf1JM_yCkGIg_B62kfw&s"} alt="" />
+            <img className='w-[120px] h-[120px] mr-[50px] rounded-[100%]' src={info.imageUrl} alt="" />
             <div className='w-[100%] flex flex-col gap-[30px]'>
               <div className='flex flex-col gap-[10px]'>
                 <div className='flex justify-between items-center'>
@@ -112,7 +108,7 @@ function App() {
                 </div>
                 <h5 className={`${textPreset2} text-[1.6rem]! text-[#0079FF]!`}>@{info.login}</h5>
               </div>
-              <h4 className={`${textPreset2} leading-[25px]`}>{info.bio ? info.bio : "This profile has no bio"}</h4>
+              <h4 className={`${textPreset2} leading-[25px]`}>{info.bio}</h4>
               <div className='p-[20px_120px_20px_40px]! w-[100%] bg-[#141D2F] rounded-[10px] flex justify-between'>
                 <div className='flex flex-col gap-[8px]'>
                   <h3 className={`${textPreset2} text-[1.3rem]!`}>Repos</h3>
